@@ -11,7 +11,7 @@ $offset=($page-1)*$limit;?>
                   <h1 class="admin-heading">All Users</h1>
               </div>
               <div class="col-md-2">
-                  <a class="add-new" href="add-user.php">add user</a>
+                  <a class="add-new" href="add-user.php">Add User</a>
               </div>
               <div class="col-md-12">
                 <?php
