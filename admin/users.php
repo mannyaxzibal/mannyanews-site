@@ -40,7 +40,7 @@ $offset=($page-1)*$limit;?>
                               if($row['role']==1){
                                 echo "Admin";}
                                 else{
-                                  echo "Normal User";  
+                                  echo "Normal user";  
                                 }
                                 ?></td>
                               <td class='edit'><a href='update-user.php?id=<?php echo $row["user_id"];?>'><i class='fa fa-edit'></i></a></td>
