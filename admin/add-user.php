@@ -1,4 +1,10 @@
-<?php include "header.php"; 
+<?php
+include "header.php";
+
+if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == '0'){
+    header("location:post.php");
+}
+
 
 if(isset($_POST['save'])){
 include "config.php";

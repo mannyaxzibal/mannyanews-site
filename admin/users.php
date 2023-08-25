@@ -1,10 +1,10 @@
-<?php include "header.php";
-include 'config.php';
-$limit=3;
-$page = isset($_GET['page']) ? $_GET['page'] : 1;
-
-$offset=($page-1)*$limit;?>
-  <div id="admin-content">
+<?php 
+include 'header.php';
+if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == '0'){
+    header("location:post.php");
+    
+}?>
+<div id="admin-content">
       <div class="container">
           <div class="row">
               <div class="col-md-10">
@@ -14,6 +14,10 @@ $offset=($page-1)*$limit;?>
                   <a class="add-new" href="add-user.php">Add User</a>
               </div>
               <div class="col-md-12">
+              <?php include 'config.php';
+                  $limit=3;
+                 $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                 $offset=($page-1)*$limit;?>
                 <?php
                 $sql= "select * from user order by user_id desc LIMIT {$offset},{$limit}";
                 $result=mysqli_query($conn,$sql) or die("query failed.");
@@ -30,10 +34,11 @@ $offset=($page-1)*$limit;?>
                       </thead>
                       <tbody>
                         <?php
+                      $id=1;
                         while($row=mysqli_fetch_assoc($result)){
                         ?>
                           <tr>
-                              <td class='id'><?php echo $row['user_id']?></td>
+                              <td class='id'><?php echo $id++; ?></td>
                               <td><?php echo $row['first_name'] . " " .$row['last_name'];?></td>
                               <td><?php echo $row['username']?></td>
                               <td><?php 
@@ -88,3 +93,4 @@ $offset=($page-1)*$limit;?>
       </div>
   </div>
 <?php include "header.php"; ?>
+
