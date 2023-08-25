@@ -8,7 +8,7 @@ if(isset($_GET['id']) && isset($_GET['catid'])){
     $sql2="select * from post where post_id = $post_id";
     $result2=mysqli_query($conn,$sql2) or die("Select query failed");
     $row=mysqli_fetch_assoc($result2);
-    unlink("upload/".$row['post_img']);
+    unlink("uplooad/".$row['post_img']);
 
    $sql = "UPDATE category SET post = post - 1 WHERE category_id = $cat_id";
     $Result = mysqli_query($conn, $sql);

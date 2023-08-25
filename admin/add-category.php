@@ -23,7 +23,7 @@ if(isset($_POST['save'])){
             </div>
             <div class="col-md-offset-3 col-md-6">
                 <!-- Form Start -->
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" autocomplete="off">
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" autocomplete="off">
                     <div class="form-group">
                         <label>Category Name</label>
                         <input type="text" name="category_name" class="form-control" placeholder="Category Name" required>

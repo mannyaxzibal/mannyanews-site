@@ -11,7 +11,7 @@
         include 'config.php';
         $post_id=$_GET['id'];
         $sql= "select * from post 
-                    LEFT JOIN category on post.category=category.category_id
+                    LEFT JOIN on category  post.category=category.category_id
                     LEFT JOIN user on post.author=user.user_id
                     where post.post_id={$post_id}";  
                      

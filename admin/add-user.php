@@ -14,7 +14,7 @@ $user=mysqli_real_escape_string($conn,$_POST['user']);
 $password=mysqli_real_escape_string($conn,md5($_POST['password']));
 $role=mysqli_real_escape_string($conn,$_POST['role']);
 
-$sql="select username from user where username='{$user}'";
+$sql="select password from user where username='{$user}'";
 $result=mysqli_query($conn, $sql) or die("query failed");
 
 if(mysqli_num_rows($result)>0){

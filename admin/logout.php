@@ -3,7 +3,7 @@ include 'config.php';
 session_start();
 session_unset();
 session_destroy();
-header("Location:http://localhost/news-site/admin/");
+header("Location: ./index.php");
 exit;
 ?>
 
